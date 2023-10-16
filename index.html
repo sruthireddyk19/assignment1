@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Student Marks</title>
+    
+    <style>
+        h1{
+            text-align:center;
+            color:red;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>INTERNAL EXAM CO ATTAINMENT</h1>
+    <form id="marksForm">
+        <table>
+            <tr>
+                <th>Course Outcome</th>
+                <th>C01</th>
+                <th>C01</th>
+                <th>C01</th>
+                <th>C02</th>
+                <th>C02</th>
+                <th>C02</th>
+                <th>C01</th>
+                <th>C01</th>
+                <th>C02</th>
+                <th>C02</th>
+            </tr>
+            <tr>
+                <th>Marks</th>
+                <th>1</th>
+                <th>1</th>
+                <th>1</th>
+                <th>1</th>
+                <th>1</th>
+                <th>1</th>
+                <th>3</th>
+                <th>3</th>
+                <th>3</th>
+                <th>3</th>
+                
+            </tr>
+            <tr>
+                <th>Roll Number</th>
+                <th>Question 1</th>
+                <th>Question 2</th>
+                <th>Question 3</th>
+                <th>Question 4</th>
+                <th>Question 5</th>
+                <th>Question 6</th>
+                <th>Question 7</th>
+                <th>Question 8</th>
+                <th>Question 9</th>
+                <th>Question 10</th>
+                
+            </tr>
+            <tr>
+                <td><input type="text" name="rollNumber[]" required></td>
+                <td><input type="number" name="q1Marks[]" min="0" required></td>
+                <td><input type="number" name="q2Marks[]" min="0" required></td>
+                <td><input type="number" name="q3Marks[]" min="0" required></td>
+                <td><input type="number" name="q4Marks[]" min="0" required></td>
+                <td><input type="number" name="q5Marks[]" min="0" required></td>
+                <td><input type="number" name="q6Marks[]" min="0" required></td>
+                <td><input type="number" name="q7Marks[]" min="0" required></td>
+                <td><input type="number" name="q8Marks[]" min="0" required></td>
+                <td><input type="number" name="q9Marks[]" min="0" required></td>
+                <td><input type="number" name="q10Marks[]" min="0" required></td>
+                
+            </tr>
+            
+            
+            <tr>
+                <td><input type="text" name="rollNumber[]" required></td>
+                <td><input type="number" name="q1Marks[]" min="0" required></td>
+                <td><input type="number" name="q2Marks[]" min="0" required></td>
+                <td><input type="number" name="q3Marks[]" min="0" required></td>
+                <td><input type="number" name="q4Marks[]" min="0" required></td>
+                <td><input type="number" name="q5Marks[]" min="0" required></td>
+                <td><input type="number" name="q6Marks[]" min="0" required></td>
+                <td><input type="number" name="q7Marks[]" min="0" required></td>
+                <td><input type="number" name="q8Marks[]" min="0" required></td>
+                <td><input type="number" name="q9Marks[]" min="0" required></td>
+                <td><input type="number" name="q10Marks[]" min="0" required></td>
+
+            </tr>
+            <tr>
+                <td><input type="text" name="rollNumber[]" required></td>
+                <td><input type="number" name="q1Marks[]" min="0" required></td>
+                <td><input type="number" name="q2Marks[]" min="0" required></td>
+                <td><input type="number" name="q3Marks[]" min="0" required></td>
+                <td><input type="number" name="q4Marks[]" min="0" required></td>
+                <td><input type="number" name="q5Marks[]" min="0" required></td>
+                <td><input type="number" name="q6Marks[]" min="0" required></td>
+                <td><input type="number" name="q7Marks[]" min="0" required></td>
+                <td><input type="number" name="q8Marks[]" min="0" required></td>
+                <td><input type="number" name="q9Marks[]" min="0" required></td>
+                <td><input type="number" name="q10Marks[]" min="0" required></td>
+            </tr> 
+
+        </table>
+        <input type="submit" value="Submit">
+    </form>
+
+    <div id="errorMessages"></div>
+
+    <script>
+        document.getElementById("marksForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const rollNumbers = document.getElementsByName("rollNumber[]");
+            const q1Marks = document.getElementsByName("q1Marks[]");
+            const q2Marks = document.getElementsByName("q2Marks[]");
+            const q3Marks = document.getElementsByName("q3Marks[]");
+            const q4Marks = document.getElementsByName("q4Marks[]");
+            const q5Marks = document.getElementsByName("q5Marks[]");
+            const q6Marks = document.getElementsByName("q6Marks[]");
+            const q7Marks = document.getElementsByName("q7Marks[]");
+            const q8Marks = document.getElementsByName("q8Marks[]");
+            const q9Marks = document.getElementsByName("q9Marks[]");
+            const q10Marks = document.getElementsByName("q10Marks[]");
+            
+
+            let isValid = true;
+
+            for (let i = 0; i < rollNumbers.length; i++) {
+                const q1 = parseFloat(q1Marks[i].value);
+                const q2 = parseFloat(q2Marks[i].value);
+                const q3 = parseFloat(q3Marks[i].value);
+                const q4 = parseFloat(q4Marks[i].value);
+                const q5 = parseFloat(q5Marks[i].value);
+                const q6 = parseFloat(q6Marks[i].value);
+                const q7 = parseFloat(q7Marks[i].value);
+                const q8 = parseFloat(q8Marks[i].value);
+                const q9 = parseFloat(q9Marks[i].value);
+                const q10 = parseFloat(q10Marks[i].value);
+                const maxMarksForQ1 = 1;
+                const maxMarksForQ2 = 1;
+                const maxMarksForQ3 = 1;
+                const maxMarksForQ4 = 1;
+                const maxMarksForQ5 = 1;
+                const maxMarksForQ6 = 1;
+                const maxMarksForQ7 = 3;
+                const maxMarksForQ8 = 3;
+                const maxMarksForQ9 = 3;
+                const maxMarksForQ10 = 3; 
+
+                if (q1 < 0 || q1 > maxMarksForQ1 || q2<0 ||q2 > maxMarksForQ2||q3<0||q3>maxMarksForQ3||q4<0||q4>maxMarksForQ4||q5<0||q5>maxMarksForQ5||q6<0||q6>maxMarksForQ6||q7<0||q7>maxMarksForQ7||q8<0||q8>maxMarksForQ8||q9<0||q9>maxMarksForQ9||q10<0||q10>maxMarksForQ10) {
+                    isValid = false;
+                    
+                    document.getElementById("errorMessages").innerHTML = "Invalid marks for one or more students.";
+                    break;
+                }
+            }
+
+            if (isValid) {
+                
+                alert("Marks submitted successfully.");
+            }
+            else{
+                alert("enter valid marks");
+            }
+        });
+    </script>
+</body>
+</html>

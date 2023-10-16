@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+   <h2> Image rollover with mouse event. </h2>
+   <h4> Rollover on the below image to change the styles of the image. </h4>
+   <img src="original_image1.jpg" style="height:100px;width:100px;" id="demo1" name="demo1" alt="demo Image1">
+   <img src="original_image2.jpg" style="height:100px;width:100px;" id="demo2" name="demo2" alt="demo Image2">
+   <img src="original_image3.jpg" style="height:100px;width:100px;" id="demo3" name="demo3" alt="demo Image3">
+  
+   
+   <script>  
+       let deomImage1 = document.getElementById("demo1");
+
+      deomImage1.onmouseover = function() {deomImage1.style = "height:200px; width:200px";};
+      deomImage1.onmouseout = function() {deomImage1.style = "height:100px; width:100px";};
+      let deomImage2 = document.getElementById("demo2");
+
+deomImage2.onmouseover = function() {deomImage2.style = "height:200px; width:200px";};
+deomImage2.onmouseout = function() {deomImage2.style = "height:100px; width:100px";};
+let deomImage3 = document.getElementById("demo3");
+
+deomImage3.onmouseover = function() {deomImage3.style = "height:200px; width:200px";};
+deomImage3.onmouseout = function() {deomImage3.style = "height:100px; width:100px";};
+   </script>
+</body>
+</html>
